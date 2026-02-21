@@ -1,0 +1,136 @@
+/* =================================
+   PAGE OTP - STYLES ISOLÉS
+   ================================= */
+
+/* Container principal - ISOLÉ */
+.otp-page-wrapper .otp-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #172243, #1a2847);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Boîte OTP */
+.otp-page-wrapper .otp-box {
+    background: #fff;
+    padding: 40px 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Titre */
+.otp-page-wrapper .otp-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #172243;
+    margin-bottom: 15px;
+}
+
+/* Messages */
+.otp-page-wrapper .success-msg {
+    background: #e6ffed;
+    color: #0f5132;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.otp-page-wrapper .error-msg {
+    background: #ffe6e6;
+    color: #842029;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Formulaire */
+.otp-page-wrapper .otp-form {
+    margin-top: 20px;
+}
+
+.otp-page-wrapper .input-group {
+    display: flex;
+    align-items: center;
+    background: #f1f5f9;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+}
+
+.otp-page-wrapper .input-group .icon {
+    color: #fb9c08;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.otp-page-wrapper .input-group .input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    color: #172243;
+}
+
+/* Bouton */
+.otp-page-wrapper .submit-btn {
+    width: 100%;
+    background: #fb9c08;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(251,156,8,0.4);
+}
+
+.otp-page-wrapper .submit-btn:hover {
+    background: #172243;
+    color: #fb9c08;
+    box-shadow: 0 6px 16px rgba(23,34,67,0.4);
+}
+
+.otp-page-wrapper .submit-btn i {
+    margin-right: 8px;
+}
+
+/* =================================
+   RESPONSIVE
+   ================================= */
+@media (max-width: 768px) {
+    .otp-page-wrapper .otp-box {
+        padding: 30px 25px;
+        margin: 20px;
+    }
+
+    .otp-page-wrapper .otp-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .otp-page-wrapper .otp-box {
+        padding: 25px 20px;
+        margin: 15px;
+    }
+
+    .otp-page-wrapper .otp-title {
+        font-size: 1.3rem;
+    }
+
+    .otp-page-wrapper .submit-btn {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+}
