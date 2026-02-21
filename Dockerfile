@@ -19,4 +19,6 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 
 RUN a2enmod rewrite
 
+COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
+
 EXPOSE 80
