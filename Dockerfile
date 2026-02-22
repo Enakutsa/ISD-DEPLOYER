@@ -24,3 +24,5 @@ COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 RUN php artisan storage:link --force
 
 EXPOSE 80
+
+CMD bash -c "php artisan migrate --force && apache2-foreground"
