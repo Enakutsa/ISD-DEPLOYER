@@ -19,4 +19,7 @@ RUN a2enmod rewrite
 
 COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
+RUN php artisan storage:link --force
+RUN php artisan migrate --force
+
 EXPOSE 80
