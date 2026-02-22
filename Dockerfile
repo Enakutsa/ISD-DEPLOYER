@@ -25,4 +25,4 @@ RUN php artisan storage:link --force
 
 EXPOSE 80
 
-CMD bash -c "php artisan migrate --force && apache2-foreground"
+CMD bash -c "php artisan migrate --force 2>/dev/null; apache2-foreground"
