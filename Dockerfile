@@ -11,6 +11,8 @@ WORKDIR /var/www/html
 
 COPY . .
 
+RUN cp .env.example .env
+
 RUN php -d memory_limit=-1 /usr/local/bin/composer install --no-dev --optimize-autoloader --no-interaction
 
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
@@ -20,7 +22,5 @@ RUN a2enmod rewrite
 COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
 RUN php artisan storage:link --force
-
-RUN php artisan migrate --force 2>/dev/null; exit 0
 
 EXPOSE 80
