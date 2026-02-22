@@ -19,11 +19,11 @@ COPY . .
 # Installer dépendances Laravel
 RUN php -d memory_limit=-1 /usr/local/bin/composer install --no-dev --optimize-autoloader --no-interaction
 
-# Installer et builder React
+# Installer et builder Vite/React
 RUN npm install && npm run build
 
-# Copier le build React dans le dossier public de Laravel
-RUN cp -r build/* public/
+# Copier le build Vite dans le dossier public de Laravel
+RUN cp -r public/build/* /var/www/html/public/build/
 
 # Droits pour Laravel
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
@@ -33,5 +33,9 @@ RUN a2enmod rewrite
 
 # Config Apache : pointer vers public/
 COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
+
+COPY public/build /var/www/html/public/build
+
+
 
 EXPOSE 80
