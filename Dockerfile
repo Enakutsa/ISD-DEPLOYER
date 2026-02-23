@@ -11,7 +11,7 @@ WORKDIR /var/www/html
 
 COPY . .
 
-RUN cp .env.example .env
+RUN cp .env.example .env && php artisan key:generate --force
 
 RUN php -d memory_limit=-1 /usr/local/bin/composer install --no-dev --optimize-autoloader --no-interaction
 
