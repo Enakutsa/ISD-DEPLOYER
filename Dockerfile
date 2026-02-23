@@ -11,9 +11,11 @@ WORKDIR /var/www/html
 
 COPY . .
 
-RUN php -d memory_limit=-1 /usr/local/bin/composer install --no-dev --optimize-autoloader --no-interaction
+RUN php -d memory_limit=-1 /usr/local/bin/composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
 
 RUN cp .env.example .env && php artisan key:generate --force
+
+RUN php artisan package:discover --ansi 2>/dev/null; exit 0
 
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
