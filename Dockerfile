@@ -11,9 +11,11 @@ WORKDIR /var/www/html
 
 COPY . .
 
+RUN echo "APP_NAME=ISD\nAPP_ENV=production\nAPP_KEY=\nAPP_DEBUG=false\nAPP_URL=https://isd-deployer.onrender.com\nDB_CONNECTION=pgsql\nSESSION_DRIVER=file\nCACHE_STORE=file\nQUEUE_CONNECTION=sync\n" > .env
+
 RUN php -d memory_limit=-1 /usr/local/bin/composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
 
-RUN cp .env.example .env && php artisan key:generate --force
+RUN php artisan key:generate --force
 
 RUN php artisan package:discover --ansi 2>/dev/null; exit 0
 
