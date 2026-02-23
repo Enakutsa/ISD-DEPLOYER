@@ -1,14 +1,16 @@
 <?php
 namespace App\Providers;
+
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\Relations\Relation;
+
 class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        \URL::forceScheme('https');
+        URL::forceScheme('https');
         
-        // Configuration du morph map pour les relations polymorphiques
         Relation::enforceMorphMap([
             'utilisateur' => 'App\Models\Utilisateur',
             'formation' => 'App\Models\Formation',
