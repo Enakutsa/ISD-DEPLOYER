@@ -80,11 +80,12 @@ export default function Home() {
 
   const collaborators = [
     { img: "/images/collaborateur/col1.jpg", name: "DEV 1 " },
-    { img: "/images/collaborateur/col2.jpg", name: "DEV 2" },
-    { img: "/images/collab-3.png", name: "Entreprise C" },
-    { img: "/images/collab-4.png", name: "Entreprise D" },
-    { img: "/images/collab-5.png", name: "Entreprise E" },
-    { img: "/images/collab-6.png", name: "Entreprise F" },
+    { img: "/images/collaborateur/col2.jpg", name: "DG 2" },
+    { img: "/images/collaborateur/col3.jpg", name: "DEV 3" },
+    { img: "/images/collaborateur/col4.jpg", name: "DEV 4" },
+    { img: "/images/collaborateur/col5.jpg", name: "DEV 5" },
+    { img: "/images/collaborateur/col6.jpg", name: "DEV 6" },
+    
   ];
 
   const testimonials = [
